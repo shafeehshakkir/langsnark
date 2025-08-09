@@ -286,7 +286,7 @@ def generate_node(state: State) -> State:
 def send_node(state: State) -> State:
     phase(state, "📤 Preparing final message...")
     names = state.get("ssids", [])
-    header = "🔥 Wi-Fi Rap Star — Diss Track Drop 🔥\n"
+    header = " Wi-Fi Rap Star — Diss Track Drop 🔥\n"
     ssid_line = "\nSSIDs:\n" + _format_ssid_header(names) + "\n" if names else ""
     body = state.get("song", "")
     footer = ""
@@ -318,10 +318,10 @@ def display_node(state: State) -> State:
                 print("🔊 Playing on the Pi...", flush=True)
                 tts_play_local(audio_file)
             else:
-                print("⚠️ No audio file created; skipping TTS.", flush=True)
+                print(" No audio file created; skipping TTS.", flush=True)
     except Exception as e:
-        print(f"❌ TTS/Audio pipeline error: {e}", flush=True)
-    phase(state, "✅ Done.")
+        print(f" TTS/Audio pipeline error: {e}", flush=True)
+    phase(state, " Done.")
     return state
 
 def build_graph():
